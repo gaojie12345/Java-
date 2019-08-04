@@ -1,0 +1,81 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                      http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1"
+         metadata-complete="true">
+    <!--全局参数-->
+    <context-param>
+        <param-name>AAA</param-name>
+        <param-value>AAA'value</param-value>
+    </context-param>
+    <context-param>
+        <param-name>BBB</param-name>
+        <param-value>BBB'value</param-value>
+    </context-param>
+
+    <servlet>
+        <servlet-name>HelloServlet</servlet-name>
+        <servlet-class>com.bite.servlet_hello.HelloServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>HelloServlet</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>LifeDemoServlet</servlet-name>
+        <servlet-class>com.bite.servlet.life.LifeDemoServlet</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>LifeDemoServlet</servlet-name>
+        <url-pattern>/life</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ConfigDemo1</servlet-name>
+        <servlet-class>com.bite.config.ConfigDemo1</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ConfigDemo1</servlet-name>
+        <url-pattern>/ConfigDemo1</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ContextDemo1</servlet-name>
+        <servlet-class>com.bite.context.ContextDemo1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ContextDemo1</servlet-name>
+        <url-pattern>/ContextDemo1</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ScopeDemo1</servlet-name>
+        <servlet-class>com.bite.scope.ScopeDemo1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ScopeDemo1</servlet-name>
+        <url-pattern>/ScopeDemo1</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ScopeDemo2</servlet-name>
+        <servlet-class>com.bite.scope.ScopeDemo2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ScopeDemo2</servlet-name>
+        <url-pattern>/ScopeDemo2</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ForwardDemo</servlet-name>
+        <servlet-class>com.bite.forward.ForwardDemo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ForwardDemo</servlet-name>
+        <url-pattern>/ForwardDemo</url-pattern>
+    </servlet-mapping>
+</web-app>
