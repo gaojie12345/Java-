@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="userInfo" class="com.ming.spring.UserInfo">
+        <property name="username" value="michael jackson"/>
+    </bean>
+
+    <bean id="recatangle_id" class="com.bittech.java4.Rectangle">
+        <property name="height" value="10"/>
+        <property name="width" value="20"/>
+    </bean>
+
+    <bean id="circluar_id" class="com.bittech.java4.Circular">
+        <property name="radius" value="10"/>
+    </bean>
+
+    <bean id="MyCaluter-id" class="com.bittech.java4.MyCaluter">
+        <property name="rectangle" ref="recatangle_id"/>
+        <property name="circular" ref="circluar_id"/>
+    </bean>
+
+</beans>
