@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <!--加入到Spring对AOP的支持-->
+    <!-- <aop:aspectj-autoproxy/>-->
+    <!--将配置的切面类注册到Spring中-->
+    <bean id="userMgr" class="com.spring.dynamicproxy.UserManager"/>
+    <bean id="myAspectForConfig" class="com.spring.dynamicproxy.MyAspectForConfig"/>
+    <!--<bean id="myAspect" class="com.spring.dynamicproxy.MyAspect"/>-->
+
+    <aop:config>
+        <aop:aspect id="myAspect" ref="myAspectForConfig">
+            <aop:pointcut id="allAddMethod" expression="execution(* add*(..)) || execution(* del(..))"/>
+            <aop:before method="checkSecurity" pointcut-ref="allAddMethod"/>
+        </aop:aspect>
+    </aop:config>
+
+</beans>
