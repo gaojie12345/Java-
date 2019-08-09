@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+   <bean id="abstractBean" abstract="true">
+       <property name="id" value="001"/>
+       <property name="username" value="avrin"/>
+   </bean>
+    <bean id="bean3" class="com.spring.bean.Bean3" parent="abstractBean">
+        <property name="password" value="123456"/>
+    </bean>
+    <bean id="bean4" class="com.spring.bean.Bean4" parent="abstractBean">
+
+    </bean>
+
+</beans>

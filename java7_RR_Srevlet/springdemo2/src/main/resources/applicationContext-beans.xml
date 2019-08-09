@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--注册自定义的转化器-->
+    <!--<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+        <property name="customEditors">
+            <map>
+                <entry key="java.util.Date">
+                    <value type="com.spring.convert.MyConvertUtils"/>
+                </entry>
+            </map>
+        </property>
+    </bean>-->
+
+    <bean id="bean5" class="com.spring.bean.Bean5">
+        <property name="age" value="35"/>
+    </bean>
+    <!--<bean id="bean4" class="com.spring.bean.Bean4">
+        <property name="id" value="001"/>
+        <property name="username" value="avrin"/>
+    </bean>-->
+    <!--<bean id="bean3" class="com.spring.bean.Bean3">
+        <property name="id" value="001"/>
+        <property name="username" value="arvin"/>
+        <property name="password" value="123456"/>
+    </bean>-->
+    <bean id="bean2" class="com.spring.bean.Bean2">
+        <property name="bean3" ref="bean3"/>
+        <property name="bean4" ref="bean4"/>
+        <property name="bean5" ref="bean5"/>
+
+    </bean>
+</beans>
