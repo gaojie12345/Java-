@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace是必须存在的-->
+<mapper namespace="test">
+    <!--建立一些关系(数据库和对象的关系)-->
+    <!--参数解释
+    id:整个的标签的名字
+    parameterType:输入的参数类型（sql语句的参数）
+    resultType:语句执行完之后的结果
+    #{}：变量的一个位置,占位符
+    -->
+    <!--根据id查询-->
+    <select id="queryUserById" parameterType="int" resultType="com.qing.po.User">
+        select * from user where userid = #{value}
+    </select>
+
+    <!--根据名称进行查询-->
+    <!--select * from ming.user where username like #{value};-->
+    <select id="queryUserByName" parameterType="java.lang.String" resultType="com.qing.po.User">
+        select * from ming.user where username like '%${value}%';
+    </select>
+
+    <!--添加用户-->
+    <insert id="addUser" parameterType="com.qing.po.User">
+        insert into ming.user (username, useraddr) value (#{userName},#{userAddr});
+    </insert>
+
+    <!--修改用户-->
+    <update id="modifyUser" parameterType="com.qing.po.User">
+        update ming.user set username = #{userName} where userid = #{userId};
+    </update>
+
+    <!--删除用户-->
+    <delete id="deleteUser" parameterType="int">
+        delete from ming.user where userid=#{value};
+    </delete>
+</mapper>
