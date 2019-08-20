@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--和数据库相关的-->
+    <!--1.driver\usernmae\password\url-->
+    <!--2.mapper-->
+    <!--什么都不用写了，因为被spring管了-->
+</configuration>
