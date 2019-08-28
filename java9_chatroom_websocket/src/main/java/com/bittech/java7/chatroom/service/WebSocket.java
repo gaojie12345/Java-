@@ -71,7 +71,6 @@ public class WebSocket {
         if (messageFromClients.getType().equals("1")) {
             //群聊信息
             String content = messageFromClients.getMsg();
-
             Message2Clients message2Clients = new Message2Clients();
             message2Clients.setContent(content);
             message2Clients.setNames(names);

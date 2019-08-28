@@ -15,6 +15,7 @@ public class AccountService {
         }
     }
 
+
     //用户注册
     public boolean userRegister(String userName,String password) {
         User user = new User();

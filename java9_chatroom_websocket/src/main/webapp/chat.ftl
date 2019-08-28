@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Access-Control-Allow-Origin" content="*">
-    <title>时话时说</title>
+    <title>聊天室</title>
 
 
     <link rel="stylesheet" href="assets/css/bootstrap.css"/>

@@ -15,12 +15,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 @WebServlet(urlPatterns = "/login")
 public class LoginController extends HttpServlet {
     private AccountService accountService = new AccountService();
+    List<String> list = new ArrayList<>();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -36,7 +36,19 @@ public class LoginController extends HttpServlet {
                     "</script>");
 
         }
+
+
         if (accountService.userLogin(userName, password)) {
+            Iterator<String> iterator = list.iterator();
+            while (iterator.hasNext()) {
+                String str = iterator.next();
+                if (userName.equals(str)) {
+                    out.println("<script>\n" +
+                            "    alert(\"该用户已登录\")\n" +
+                            "    window.location.href = \"/index.html\";\n" +
+                            "</script>");
+                }
+            }
             //登陆成功，跳转到聊天页面
             //加载ftl
             Template template = getTemplate(request, "/chat.ftl");
@@ -47,6 +59,7 @@ public class LoginController extends HttpServlet {
             } catch (TemplateException e) {
                 e.printStackTrace();
             }
+            list.add(userName);
         } else {//登陆失败，返回到登陆页面
             out.println("<script>\n" +
                     "    alert(\"用户名或密码错误\")\n" +
