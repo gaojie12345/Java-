@@ -1,8 +1,12 @@
 package com.qing.client.multi;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.Socket;
+import java.util.NoSuchElementException;
+import java.util.Scanner;
 
-public class ReadDataFromServerThread extends Thread{
+public class ReadDataFromServerThread extends Thread {
 
     private final Socket client;
 
@@ -12,6 +16,19 @@ public class ReadDataFromServerThread extends Thread{
 
     @Override
     public void run() {
-        super.run();
+        try {
+            InputStream in = this.client.getInputStream();
+            Scanner scanner = new Scanner(in);
+            while (true) {
+                try {
+                    String message = scanner.nextLine();
+                    System.out.println(message);
+                } catch (NoSuchElementException e) {
+
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
