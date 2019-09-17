@@ -22,6 +22,43 @@ public class Test2 {
                     if (data[k] - data[n] == g) {
                         a = a + 1;
                         n = k;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     }
                     if (data[k] - g > data[n]) {
                         break;
